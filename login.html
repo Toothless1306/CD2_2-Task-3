@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3498db; /* Blue background color */
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #fff; /* White text color */
+    }
+    form {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    table {
+      width: 100%;
+    }
+    table tr {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    table label, table input {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login to our Blog</h1>
+    <form id="loginForm">
+      <table>
+        <tr>
+          <td>
+            <label for="username">Username:</label>
+          </td>
+          <td>
+            <input type="text" id="username" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="password">Password:</label>
+          </td>
+          <td>
+            <input type="password" id="password" required>
+          </td>
+        </tr>
+      </table>
+      <button type="submit"><a href="register.html">Login</button>
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const message = document.getElementById("message");
+
+    loginForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Here, you can add logic to validate the username and password, e.g., by checking against a database.
+
+      // Simulate a successful login for this example
+      if (username === "your_username" && password === "your_password") {
+        message.innerText = "Login successful!";
+      } else {
+        message.innerText = "Login failed. Please check your credentials.";
+      }
+
+      // Clear form fields
+      loginForm.reset();
+    });
+  </script>
+</body>
+</html>

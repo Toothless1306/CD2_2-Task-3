@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3498db; /* Blue background color */
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #fff; /* White text color */
+    }
+    form {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    table {
+      width: 100%;
+    }
+    table tr {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    table label, table input {
+      flex: 1;
+    }
+    table input[type="file"] {
+      display: none;
+    }
+    table img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+    .file-input-label {
+      background-color: #3498db;
+      color: #fff;
+      cursor: pointer;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .file-input-label:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Register for our Blog</h1>
+    <form id="registrationForm">
+      <table>
+        <tr>
+          <td>
+            <label for="username">Username:</label>
+          </td>
+          <td>
+            <input type="text" id="username" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email:</label>
+          </td>
+          <td>
+            <input type="email" id="email" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="password">Password:</label>
+          </td>
+          <td>
+            <input type="password" id="password" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="dateOfBirth">Date of Birth:</label>
+          </td>
+          <td>
+            <input type="date" id="dateOfBirth" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="image">Profile Image:</label>
+          </td>
+          <td>
+            <input type="file" id="image" accept="image/*">
+            <label class="file-input-label" for="image">Upload Image</label>
+          </td>
+        </tr>
+      </table>
+      <button type="submit">Register</button>
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    const registrationForm = document.getElementById("registrationForm");
+    const message = document.getElementById("message");
+
+    registrationForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const dateOfBirth = document.getElementById("dateOfBirth").value;
+
+      // You can add validation and other checks here
+
+      // Simulate a successful registration
+      // In a real application, you'd typically send this data to a server for registration
+      message.innerText = `Registration successful for ${username} with email ${email} and Date of Birth: ${dateOfBirth}.`;
+
+      // Clear form fields
+      registrationForm.reset();
+    });
+  </script>
+</body>
+</html>
